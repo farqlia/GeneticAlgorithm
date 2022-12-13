@@ -4,8 +4,8 @@ from abc import ABC, abstractmethod
 class Individual:
 
     @abstractmethod
-    def fitness(self):
-        return 0
+    def evaluate_fitness(self):
+        pass
 
     @abstractmethod
     def mutate(self):

@@ -20,7 +20,7 @@ def test_genotype():
                                         (np.array([True, False, True, False]), 0)])
 def test_fitness(genome, fit):
     ind = KnapsackProblemIndividual(genome=genome, problem=problem)
-    assert ind.fitness() == fit
+    assert ind.evaluate_fitness() == fit
 
 
 def test_mutate_all_genes():

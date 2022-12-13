@@ -10,13 +10,11 @@ class KnapsackProblemIndividual(Individual):
     def __init__(self, genome, problem):
         self.genome = genome
         self.length = problem.genome_length()
-        self.fitness_value = -np.inf
+        self.fitness = -np.inf
         self.problem = problem
 
-    def fitness(self):
-        if self.fitness_value < 0:
-            self.fitness_value = sum(self.problem.values[self.genome]) if sum(self.problem.weights[self.genome]) <= self.problem.W else 0
-        return self.fitness_value
+    def evaluate_fitness(self):
+        self.fitness = sum(self.problem.values[self.genome]) if sum(self.problem.weights[self.genome]) <= self.problem.W else 0
 
     def mutate(self, mut_prob=0.1):
         was_mutated = False
@@ -43,7 +41,7 @@ class KnapsackProblemIndividual(Individual):
     def copy(self):
         genome = np.ndarray.copy(self.genome)
         ind = KnapsackProblemIndividual(genome, self.problem)
-        ind.fitness_value = self.fitness_value
+        ind.fitness = self.fitness
         return ind
 
 
