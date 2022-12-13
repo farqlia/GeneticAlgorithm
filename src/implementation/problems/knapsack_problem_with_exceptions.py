@@ -16,7 +16,7 @@ class KnapsackProblem(Problem):
         return self.n
 
     # x is a boolean array
-    def fitness(self, mask):
+    def solution_value(self, mask):
         return sum(self.values[mask]) if sum(self.weights[mask]) <= self.W else 0
 
     # assumes that the file is in form

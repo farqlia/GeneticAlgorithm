@@ -69,5 +69,6 @@ class KnapsackProblem(Problem):
                         self.optimal = float(line)
 
         except OSError:
-            return False 
+            return False
         return True
+

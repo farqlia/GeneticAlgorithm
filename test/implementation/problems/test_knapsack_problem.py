@@ -9,10 +9,10 @@ problem = KnapsackProblem(W=5, values=np.array([5, 1, 4, 3]), weights=np.array([
 
 class TestFitness:
 
-    @pytest.mark.parametrize('solution,fitness', [(np.array([False, True, False, True]), 4),
-                                                  (np.array([False, True, True, False]), 5)])
-    def test_fitness_for_feasible(self, solution, fitness):
-        assert problem.fitness(solution) == fitness
+    @pytest.mark.parametrize('solution,value', [(np.array([False, True, False, True]), 4),
+                                                (np.array([False, True, True, False]), 5)])
+    def test_fitness_for_feasible(self, solution, value):
+        assert problem.fitness(solution) == value
 
     @pytest.mark.parametrize('solution', [np.array([True, True, True, False])])
     def test_fitness_for_unfeasible(self, solution):

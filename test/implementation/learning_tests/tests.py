@@ -27,3 +27,7 @@ def test_isnumeric():
 
 def test_convert_to_float():
     float('g')
+
+
+def test_convert_to_bool():
+    print(np.ones(10, dtype=bool))
